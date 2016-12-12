@@ -17,17 +17,17 @@ import java.io.IOException;
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
     @Autowired
-    private PersonService personService;
+    private StudentService studentService;
 
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException, ServletException {
         HttpSession session = httpServletRequest.getSession();
         User authPerson = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Person person = personService.readByUserName(authPerson.getUsername());
-        session.setAttribute("user", person);
+        Student student = studentService.readByUserName(authPerson.getUsername());
+        session.setAttribute("user", stuent);
 
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-        httpServletResponse.sendRedirect("/month");
+        httpServletResponse.sendRedirect("/cabinet");
     }
 }
