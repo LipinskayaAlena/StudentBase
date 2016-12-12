@@ -21,6 +21,9 @@ public class Student implements Serializable {
     @Column(name = "email", nullable = false)
     private String email;
 
+    @Column(name = "password", nullable = false)
+    private String password;
+
     public long getId_student() { return this.id_student; }
 
     public void setId_student(long id_student) { this.id_student = id_student; }
@@ -32,5 +35,13 @@ public class Student implements Serializable {
     public String getEmail() { return  this.email; }
 
     public void setEmail(String email) { this.email = email; }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }
