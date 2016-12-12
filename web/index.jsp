@@ -1,16 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Asus
-  Date: 12.12.2016
-  Time: 14:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <!-- Load jQuery from Google's CDN -->
+  <!-- Source our javascript file with the jQUERY code -->
+  <link rel="stylesheet" href="resources/css/style_menu.css" />
+  <link rel="stylesheet" href="resources/css/style_footer.css" />
+</head>
+<body>
+<!-- Use this navigation div as your menu bar div -->
+<jsp:include page="WEB-INF/pages/include/menu.jsp" />
+<jsp:include page="WEB-INF/pages/include/footer.jsp" />
+
+</body>
 </html>
