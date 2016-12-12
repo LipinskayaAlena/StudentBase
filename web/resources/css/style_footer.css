@@ -1,0 +1,11 @@
+#footer{
+    width:100%;
+    background: #007777 0 0 no-repeat;
+    height: 50px;
+}
+
+#footer p {
+    color:#ffffff;
+    margin-left: 50px;
+    font-size: 20px;
+}
