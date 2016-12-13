@@ -8,5 +8,7 @@
         <mapping class="by.bsu.famcs.lipinskaya.model.Group"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Course"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Faculty"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Subject"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Teacher"/>
     </session-factory>
 </hibernate-configuration>
