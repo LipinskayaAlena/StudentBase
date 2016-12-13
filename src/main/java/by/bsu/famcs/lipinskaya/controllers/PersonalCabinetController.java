@@ -42,8 +42,9 @@ public class PersonalCabinetController {
 //                break;
 //        }
 
-        //modelAndView.addObject("current_day", currentDate);
-        // modelAndView.addObject("last_month", listDaysLastMonth);
+        modelAndView.addObject("student", student);
+        //modelAndView.addObject("id", student.getId_student());
+        //modelAndView.addObject("email", student.getEmail());
         // modelAndView.addObject("days", listDays);
         //modelAndView.addObject("name_month_year", nameCurrentMonth + " " + currentYear);
         //modelAndView.addObject("date_notes", dateNotes);
