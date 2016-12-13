@@ -20,48 +20,32 @@
 <!-- Use this navigation div as your menu bar div -->
 <div id="wrap">
     <jsp:include page="include/menu.jsp" />
-    <table width="100%" align="center" style="padding-top:50px; padding-left:200px">
-        <tr>
-            <td align="right">
-                <img src="../../resources/photos/${student.id_student}.png" width="300" height="400"
-                     alt="Иллюстрация" align="left"
-                     vspace="5" hspace="5"/>
-            </td>
-            <td valign="top" align="left">
-                <table width="500" cellspacing="20" cellpadding="30" >
-                    <tr>
-                        <td align="left" width="200">ФИО</td>
-                        <td>${student.name}</td>
-                    </tr>
-                    <tr>
-                        <td width="200" align="left">Номер студенческого</td>
-                        <td width="300" >${student.id_student}</td>
-                    </tr>
-                    <tr>
-                        <td align="left" width="200">Факультет</td>
-                        <td>${student.faculty.name}</td>
-                    </tr>
-                    <tr>
-                        <td align="left" width="200">Курс</td>
-                        <td>${student.course.id_course}</td>
-                    </tr>
-                    <tr>
-                        <td align="left" width="200">Группа</td>
-                        <td>${student.group.number}</td>
-                    </tr>
-                    <tr>
-                        <td align="left" width="200">Специальность</td>
-                        <td>${student.group.speciality}</td>
-                    </tr>
-                    <tr>
-                        <td align="left">Email</td>
-                        <td>${student.email}</td>
-                    </tr>
-                </table>
-            </td>
+    <table width="70%"  align="center" cellspacing="20" cellpadding="30" style="padding-left:500px; padding-top:50px">
+        <tr style="font-size:20px">
+            <td align="center">Subject</td>
+            <td align="center">Teacher</td>
         </tr>
 
+        <c:forEach var="teacher" items="${teachers}">
+        <tr align = "center" style="font-size:20px">
+            <td align="center">
+                <table>
+                    <tr>
+                    <c:forEach var="subject" items="${teacher.subjects}">
+                        <td align="center">
+                            ${subject.name}
+                        </td>
+                    </c:forEach>
+                    <tr>
+                </table>
+            </td>
+
+            <td align="center">${teacher.name}</td>
+        </c:forEach>
+
     </table>
+
+
 
 
 </div>

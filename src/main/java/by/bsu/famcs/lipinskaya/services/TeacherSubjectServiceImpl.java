@@ -18,7 +18,7 @@ public class TeacherSubjectServiceImpl implements TeacherSubjectService {
     @Autowired
     TeacherSubjectDAO teacherSubjectDAO;
 
-    public List<Teacher> readTeachers() {
-        return teacherSubjectDAO.getAllTeachers();
+    public List<Teacher> readTeachers(Long faculty) {
+        return teacherSubjectDAO.getAllTeachers(faculty);
     }
 }

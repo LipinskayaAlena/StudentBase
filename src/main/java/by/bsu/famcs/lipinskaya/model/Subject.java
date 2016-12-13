@@ -25,11 +25,6 @@ public class Subject implements Serializable {
     @JoinColumn(name = "fk_course")
     private Course course;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fk_group")
-    private Group fk_group;
-
-
     public Long getId_subject() { return this.id_subject; }
     public void setId_subject(Long id_subject) { this.id_subject = id_subject; }
 
@@ -46,10 +41,4 @@ public class Subject implements Serializable {
         this.course = course;
     }
 
-    public Group getGroup() {
-        return fk_group;
-    }
-    public void setGroup(Group fk_group) {
-        this.fk_group = fk_group;
-    }
 }

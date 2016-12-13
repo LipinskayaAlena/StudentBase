@@ -9,5 +9,5 @@ import java.util.List;
  * Created by Asus on 13.12.2016.
  */
 public interface TeacherSubjectService {
-    List<Teacher> readTeachers();
+    List<Teacher> readTeachers(Long faculty);
 }

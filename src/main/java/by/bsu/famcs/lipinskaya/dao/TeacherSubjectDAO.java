@@ -8,5 +8,5 @@ import java.util.List;
  * Created by Asus on 13.12.2016.
  */
 public interface TeacherSubjectDAO {
-    List<Teacher> getAllTeachers();
+    List<Teacher> getAllTeachers(Long faculty);
 }

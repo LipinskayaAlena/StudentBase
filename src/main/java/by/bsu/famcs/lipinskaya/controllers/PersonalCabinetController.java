@@ -29,8 +29,6 @@ public class PersonalCabinetController {
         //List<Note> notes = noteService.getNotesByUsername(user.getUsername());
         //List<String> dateNotes = new ArrayList<String>();
         //List<Note> noteToday = new ArrayList<Note>();
-        String nameFaculty = studentService.getFaculty(student.getFaculty().getId_faculty());
-
         ModelAndView modelAndView = new ModelAndView("../../WEB-INF/pages/personal-cabinet");
 //        switch (currentMonth) {
 //            case 11:
@@ -48,7 +46,6 @@ public class PersonalCabinetController {
 //        }
 
         modelAndView.addObject("student", student);
-        modelAndView.addObject("faculty", nameFaculty);
         //modelAndView.addObject("id", student.getId_student());
         //modelAndView.addObject("email", student.getEmail());
         // modelAndView.addObject("days", listDays);
