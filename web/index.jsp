@@ -11,9 +11,6 @@
 <table>
   <tr>
     <td>
-      <img src="../../resources/images/signMenu.png" alt="Sign" width="50" height="45">
-    </td>
-    <td>
       <h1 class="styleText">StudentBase</h1>
     </td>
   </tr>

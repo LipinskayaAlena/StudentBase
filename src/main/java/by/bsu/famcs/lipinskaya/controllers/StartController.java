@@ -7,7 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class StartController {
-
     @RequestMapping(value = "/start", method = RequestMethod.GET)
     public ModelAndView getStart() {
         return new ModelAndView("../../index");

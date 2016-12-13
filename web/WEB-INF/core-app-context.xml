@@ -43,9 +43,6 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="passwordEncoder" class="by.bsu.famcs.lipinskaya.utils.handlers.CustomPasswordEncoder">
-        <constructor-arg value="SHA-256"/>
-    </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

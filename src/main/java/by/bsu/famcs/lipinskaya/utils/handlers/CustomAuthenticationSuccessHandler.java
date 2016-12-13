@@ -1,7 +1,7 @@
 package by.bsu.famcs.lipinskaya.utils.handlers;
 
-import by.bsu.famcs.lipinskaya.model.Person;
-import by.bsu.famcs.lipinskaya.services.PersonService;
+import by.bsu.famcs.lipinskaya.model.Student;
+import by.bsu.famcs.lipinskaya.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,15 +19,13 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     @Autowired
     private StudentService studentService;
 
-    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
-                                        HttpServletResponse httpServletResponse,
-                                        Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         HttpSession session = httpServletRequest.getSession();
         User authPerson = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Student student = studentService.readByUserName(authPerson.getUsername());
-        session.setAttribute("user", stuent);
+        Student student = studentService.readByEmail(authPerson.getUsername());
+        session.setAttribute("student", student);
 
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-        httpServletResponse.sendRedirect("/cabinet");
+        httpServletResponse.sendRedirect("/personal-cabinet");
     }
 }

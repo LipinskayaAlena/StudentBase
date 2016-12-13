@@ -8,4 +8,7 @@ import by.bsu.famcs.lipinskaya.model.Student;
 public interface StudentDAO {
     Student getStudentByName(String name);
     Student getStudentByEmail(String email);
+    Student getStudentById(String id);
+
+    Student find(String email, String password);
 }

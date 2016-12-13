@@ -1,6 +1,9 @@
 package by.bsu.famcs.lipinskaya.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -13,7 +16,7 @@ public class Student implements Serializable {
 
     @Id
     @Column(name = "id_student", nullable = false)
-    private long id_student;
+    private String id_student;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -24,9 +27,9 @@ public class Student implements Serializable {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public long getId_student() { return this.id_student; }
+    public String getId_student() { return this.id_student; }
 
-    public void setId_student(long id_student) { this.id_student = id_student; }
+    public void setId_student(String id_student) { this.id_student = id_student; }
 
     public String getName() { return this.name; }
 

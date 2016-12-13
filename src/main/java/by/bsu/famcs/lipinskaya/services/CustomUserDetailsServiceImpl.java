@@ -1,6 +1,5 @@
 package by.bsu.famcs.lipinskaya.services;
 
-import by.bsu.famcs.lipinskaya.model.Person;
 import by.bsu.famcs.lipinskaya.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,9 +23,11 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
         Student student = studentService.readByEmail(email);
         if (student == null) {
             throw new UsernameNotFoundException("Can't find student with email: " + email);
+        } else {
+            Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+            return new User(student.getEmail(), student.getPassword(), authorities);
         }
-
-        Set<GrantedAuthority> authorities =  new HashSet<GrantedAuthority>();
-        return new User(student.getEmail(), student.getPassword(), authorities);
     }
+
+
 }
