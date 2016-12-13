@@ -20,28 +20,19 @@
 <!-- Use this navigation div as your menu bar div -->
 <div id="wrap">
     <jsp:include page="include/menu.jsp" />
-    <table width="70%" align="center" cellspacing="20" cellpadding="30" style="margin-left:500px; padding-top:50px">
+    <table width="70%" align="center" cellspacing="20" cellpadding="30" style="margin-left:250px; padding-top:50px">
         <tr style="font-size:30px">
             <td align="center">Subject</td>
             <td align="center">Description</td>
         </tr>
 
-        <c:forEach var="teacher" items="${teachers}">
+        <c:forEach var="subject" items="${subjects}">
         <tr align = "center" style="font-size:20px">
-            <td align="center" style="font-size:20px">
-                <table>
-                    <tr>
-                        <c:forEach var="subject" items="${teacher.subjects}">
-                        <td align="center">
-                                ${subject.name}
-                        </td>
-                        </c:forEach>
-                    <tr>
-                </table>
-            </td>
+            <td align="center" style="font-size:20px">${subject.name}</td>
 
-            <td align="center" style="font-size:20px">${teacher.name}</td>
-            </c:forEach>
+            <td align="center" style="font-size:20px">${subject.description}</td>
+        </tr>>
+        </c:forEach>
 
     </table>
 
