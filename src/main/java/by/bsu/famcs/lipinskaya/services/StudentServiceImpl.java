@@ -1,6 +1,5 @@
 package by.bsu.famcs.lipinskaya.services;
 
-import by.bsu.famcs.lipinskaya.dao.FacultyDAO;
 import by.bsu.famcs.lipinskaya.dao.StudentDAO;
 import by.bsu.famcs.lipinskaya.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;

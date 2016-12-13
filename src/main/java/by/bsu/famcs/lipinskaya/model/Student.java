@@ -32,9 +32,9 @@ public class Student implements Serializable {
     @JoinColumn(name = "fk_course")
     private Course course;
 
-    //@ManyToOne(fetch = FetchType.EAGER)
-    //@JoinColumn(name = "fk_group")
-    //private Group group;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_group")
+    private Group fk_group;
 
     public String getId_student() { return this.id_student; }
 
@@ -70,11 +70,11 @@ public class Student implements Serializable {
         this.course = course;
     }
 
-    //public Group getGroup() {
-     //   return group;
-    //}
-    //public void setGroup(Group group) {
-     //   this.group = group;
-    //}
+    public Group getGroup() {
+        return fk_group;
+    }
+    public void setGroup(Group fk_group) {
+        this.fk_group = fk_group;
+    }
 
 }

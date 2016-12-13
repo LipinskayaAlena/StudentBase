@@ -46,6 +46,14 @@
                     <td>${student.course.id_course}</td>
                 </tr>
                 <tr>
+                    <td align="left" width="200">Группа</td>
+                    <td>${student.group.number}</td>
+                </tr>
+                <tr>
+                    <td align="left" width="200">Специальность</td>
+                    <td>${student.group.speciality}</td>
+                </tr>
+                <tr>
                     <td align="left">Email</td>
                     <td>${student.email}</td>
                 </tr>

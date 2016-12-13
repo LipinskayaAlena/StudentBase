@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Created by Asus on 13.12.2016.
  */
 @Entity
-@Table(name="group")
+@Table(name="group_stud")
 public class Group implements Serializable {
     private static final long serialVersionUID = 1L;
 
