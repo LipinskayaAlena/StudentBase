@@ -21,4 +21,8 @@ public class TeacherSubjectServiceImpl implements TeacherSubjectService {
     public List<Teacher> readTeachers(Long faculty) {
         return teacherSubjectDAO.getAllTeachers(faculty);
     }
+
+    public List<Subject> readSubjects(Long course) {
+        return teacherSubjectDAO.getAllSubjects(course);
+    }
 }

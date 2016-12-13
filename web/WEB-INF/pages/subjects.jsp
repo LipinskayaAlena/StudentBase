@@ -23,7 +23,7 @@
     <table width="70%" align="center" cellspacing="20" cellpadding="30" style="margin-left:500px; padding-top:50px">
         <tr style="font-size:30px">
             <td align="center">Subject</td>
-            <td align="center">Teacher</td>
+            <td align="center">Description</td>
         </tr>
 
         <c:forEach var="teacher" items="${teachers}">
@@ -31,17 +31,17 @@
             <td align="center" style="font-size:20px">
                 <table>
                     <tr>
-                    <c:forEach var="subject" items="${teacher.subjects}">
+                        <c:forEach var="subject" items="${teacher.subjects}">
                         <td align="center">
-                            ${subject.name}
+                                ${subject.name}
                         </td>
-                    </c:forEach>
+                        </c:forEach>
                     <tr>
                 </table>
             </td>
 
             <td align="center" style="font-size:20px">${teacher.name}</td>
-        </c:forEach>
+            </c:forEach>
 
     </table>
 

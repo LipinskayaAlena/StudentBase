@@ -1,6 +1,7 @@
 package by.bsu.famcs.lipinskaya.controllers;
 
 import by.bsu.famcs.lipinskaya.model.Student;
+import by.bsu.famcs.lipinskaya.model.Subject;
 import by.bsu.famcs.lipinskaya.model.Teacher;
 import by.bsu.famcs.lipinskaya.services.TeacherSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class TeacherSubjectController {
     TeacherSubjectService teacherSubjectService;
 
     @RequestMapping(value = "/teacher-subject", method = RequestMethod.GET)
-    public ModelAndView getMonth(HttpServletRequest request) {
+    public ModelAndView getTeacherSubject(HttpServletRequest request) {
         Student student = (Student)request.getSession().getAttribute("student");
         //List<Note> notes = noteService.getNotesByUsername(user.getUsername());
         //List<String> dateNotes = new ArrayList<String>();
@@ -33,13 +34,23 @@ public class TeacherSubjectController {
 
 
         modelAndView.addObject("teachers", teachers);
-        //modelAndView.addObject("faculty", nameFaculty);
-        //modelAndView.addObject("id", student.getId_student());
-        //modelAndView.addObject("email", student.getEmail());
-        // modelAndView.addObject("days", listDays);
-        //modelAndView.addObject("name_month_year", nameCurrentMonth + " " + currentYear);
-        //modelAndView.addObject("date_notes", dateNotes);
-        //modelAndView.addObject("note_today", noteToday);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/subjects", method = RequestMethod.GET)
+    public ModelAndView getSubject(HttpServletRequest request) {
+        Student student = (Student)request.getSession().getAttribute("student");
+        //List<Note> notes = noteService.getNotesByUsername(user.getUsername());
+        //List<String> dateNotes = new ArrayList<String>();
+        //List<Note> noteToday = new ArrayList<Note>();
+        //String nameFaculty = studentService.getFaculty(student.getFaculty().getId_faculty());
+        List<Subject> subjects = teacherSubjectService.readSubjects(student.getCourse().getId_course());
+
+        ModelAndView modelAndView = new ModelAndView("../../WEB-INF/pages/subjects");
+
+
+        modelAndView.addObject("subjects", subjects);
 
         return modelAndView;
     }
