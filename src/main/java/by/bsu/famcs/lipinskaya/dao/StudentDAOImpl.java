@@ -15,7 +15,6 @@ import java.util.List;
 @Repository
 public class StudentDAOImpl implements StudentDAO {
     private static String GET_STUDENT_BY_EMAIL = "FROM Student WHERE email=:email";
-    private static String GET_USER_BY_ID = "FROM User WHERE id=:id";
     private static String FIND_STUDENT_BY_EMAIL_PASSWORD = "from Student where email=:email AND password = :password";
 
     @Autowired
