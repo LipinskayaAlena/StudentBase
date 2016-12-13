@@ -15,8 +15,6 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDAO studentDAO;
 
-    @Autowired
-    private FacultyDAO facultyDAO;
 
     public Student readByEmail(String email) {
         return studentDAO.getStudentByEmail(email);
@@ -30,8 +28,5 @@ public class StudentServiceImpl implements StudentService {
         return studentDAO.find(email, password);
     }
 
-    public String getFaculty(long id) {
-        return facultyDAO.getFaculty(id);
-    }
 
 }

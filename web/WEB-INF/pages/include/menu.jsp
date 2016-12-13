@@ -7,10 +7,10 @@
         </div>
 
         <ul id="links">
-            <li><a href="#">личный кабинет</a></li>
+            <li><a href="/personal-cabinet">личный кабинет</a></li>
             <li><a href="#">расписание</a></li>
             <li><a href="#">предметы</a></li>
-            <li><a href="#">преподаватели</a></li>
+            <li><a href="/teacher-subject">преподаватели</a></li>
         </ul>
     </div>
 </div>

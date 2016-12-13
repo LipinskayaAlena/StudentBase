@@ -10,5 +10,5 @@ public interface StudentService {
     Student readByEmail(String email);
     Student readById(String id);
     Student find(String email, String password);
-    String getFaculty(long id);
+
 }
