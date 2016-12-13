@@ -38,6 +38,14 @@
                     <td width="300" >${student.id_student}</td>
                 </tr>
                 <tr>
+                    <td align="left" width="200">Факультет</td>
+                    <td>${student.faculty.name}</td>
+                </tr>
+                <tr>
+                    <td align="left" width="200">Курс</td>
+                    <td>${student.course.id_course}</td>
+                </tr>
+                <tr>
                     <td align="left">Email</td>
                     <td>${student.email}</td>
                 </tr>

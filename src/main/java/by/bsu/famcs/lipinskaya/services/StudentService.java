@@ -1,5 +1,6 @@
 package by.bsu.famcs.lipinskaya.services;
 
+import by.bsu.famcs.lipinskaya.model.Faculty;
 import by.bsu.famcs.lipinskaya.model.Student;
 
 /**
@@ -9,4 +10,5 @@ public interface StudentService {
     Student readByEmail(String email);
     Student readById(String id);
     Student find(String email, String password);
+    String getFaculty(long id);
 }

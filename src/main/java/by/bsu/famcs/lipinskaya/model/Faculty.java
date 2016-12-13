@@ -16,14 +16,14 @@ public class Faculty implements Serializable {
 
     @Id
     @Column(name = "id_faculty", nullable = false)
-    private long id_faculty;
+    private Long id_faculty;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    public long getId_faculty() { return this.id_faculty; }
+    public Long getId_faculty() { return this.id_faculty; }
 
-    public void setId_faculty(long id_faculty) { this.id_faculty = id_faculty; }
+    public void setId_faculty(Long id_faculty) { this.id_faculty = id_faculty; }
 
     public String getName() { return this.name; }
 

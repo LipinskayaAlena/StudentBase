@@ -5,5 +5,8 @@
 <hibernate-configuration>
     <session-factory>
         <mapping class="by.bsu.famcs.lipinskaya.model.Student"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Group"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Course"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Faculty"/>
     </session-factory>
 </hibernate-configuration>

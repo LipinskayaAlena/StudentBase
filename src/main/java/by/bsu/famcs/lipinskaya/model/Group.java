@@ -16,17 +16,24 @@ public class Group implements Serializable {
 
     @Id
     @Column(name = "id_group", nullable = false)
-    private long id_group;
+    private Long id_group;
 
     @Column(name = "speciality", nullable = false)
     private String speciality;
 
+    @Column(name = "number", nullable = false)
+    private Long number;
 
-    public long getId_group() { return this.id_group; }
 
-    public void setId_group(long id_group) { this.id_group = id_group; }
+    public Long getId_group() { return this.id_group; }
+
+    public void setId_group(Long id_group) { this.id_group = id_group; }
 
     public String getSpeciality() { return this.speciality; }
 
     public void setSpeciality(String speciality) { this.speciality = speciality; }
+
+    public Long getNumber() { return this.number; }
+
+    public void setNumber(Long number) { this.number = number; }
 }

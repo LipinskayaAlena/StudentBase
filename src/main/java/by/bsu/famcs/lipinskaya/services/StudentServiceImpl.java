@@ -1,5 +1,6 @@
 package by.bsu.famcs.lipinskaya.services;
 
+import by.bsu.famcs.lipinskaya.dao.FacultyDAO;
 import by.bsu.famcs.lipinskaya.dao.StudentDAO;
 import by.bsu.famcs.lipinskaya.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDAO studentDAO;
 
+    @Autowired
+    private FacultyDAO facultyDAO;
 
     public Student readByEmail(String email) {
         return studentDAO.getStudentByEmail(email);
@@ -27,4 +30,9 @@ public class StudentServiceImpl implements StudentService {
     public Student find(String email, String password) {
         return studentDAO.find(email, password);
     }
+
+    public String getFaculty(long id) {
+        return facultyDAO.getFaculty(id);
+    }
+
 }

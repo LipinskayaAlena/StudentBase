@@ -1,9 +1,6 @@
 package by.bsu.famcs.lipinskaya.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -27,6 +24,18 @@ public class Student implements Serializable {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_faculty")
+    private Faculty faculty;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_course")
+    private Course course;
+
+    //@ManyToOne(fetch = FetchType.EAGER)
+    //@JoinColumn(name = "fk_group")
+    //private Group group;
+
     public String getId_student() { return this.id_student; }
 
     public void setId_student(String id_student) { this.id_student = id_student; }
@@ -46,5 +55,26 @@ public class Student implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Faculty getFaculty() {
+        return faculty;
+    }
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    //public Group getGroup() {
+     //   return group;
+    //}
+    //public void setGroup(Group group) {
+     //   this.group = group;
+    //}
 
 }
