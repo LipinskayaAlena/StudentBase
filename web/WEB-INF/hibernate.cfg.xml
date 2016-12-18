@@ -11,5 +11,8 @@
         <mapping class="by.bsu.famcs.lipinskaya.model.Subject"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Teacher"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Debts"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.TimeOfPair"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Schedule"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.DayOfWeek"/>
     </session-factory>
 </hibernate-configuration>
