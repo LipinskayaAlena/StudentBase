@@ -18,7 +18,7 @@
 
 <body>
 <!-- Use this navigation div as your menu bar div -->
-<div id="wrap">
+<div>
     <jsp:include page="include/menu.jsp" />
     <table width="70%" align="center" cellspacing="20" cellpadding="30" style="margin-left:250px; padding-top:50px">
         <tr style="font-size:30px">
@@ -31,7 +31,7 @@
             <td align="center" style="font-size:20px">${subject.name}</td>
 
             <td align="center" style="font-size:20px">${subject.description}</td>
-        </tr>>
+        </tr>
         </c:forEach>
 
     </table>

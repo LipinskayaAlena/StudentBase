@@ -18,9 +18,9 @@
 
 <body>
 <!-- Use this navigation div as your menu bar div -->
-<div id="wrap">
+<div>
 <jsp:include page="include/menu.jsp" />
-<table width="100%" align="center" style="padding-top:50px; padding-left:200px">
+<table width="100%" align="center" style="margin-bottom: 50px; padding-top:50px; padding-left:200px">
     <tr>
         <td align="right">
             <img src="../../resources/photos/${student.id_student}.png" width="300" height="400"

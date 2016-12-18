@@ -36,6 +36,10 @@ public class Student implements Serializable {
     @JoinColumn(name = "fk_group")
     private Group fk_group;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_debts")
+    private Debts fk_debts;
+
     public String getId_student() { return this.id_student; }
 
     public void setId_student(String id_student) { this.id_student = id_student; }
@@ -70,11 +74,17 @@ public class Student implements Serializable {
         this.course = course;
     }
 
+    public Debts getDebts() {
+        return fk_debts;
+    }
+    public void setDebts(Debts fk_debts) {
+        this.fk_debts = fk_debts;
+    }
+
     public Group getGroup() {
         return fk_group;
     }
     public void setGroup(Group fk_group) {
         this.fk_group = fk_group;
     }
-
 }
