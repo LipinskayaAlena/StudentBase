@@ -12,6 +12,7 @@
 <head>
     <!-- Load jQuery from Google's CDN -->
     <!-- Source our javascript file with the jQUERY code -->
+    <title>Subjects</title>
     <link rel="stylesheet" href="../../resources/css/style_menu.css" />
     <link rel="stylesheet" href="../../resources/css/style_footer.css" />
 </head>

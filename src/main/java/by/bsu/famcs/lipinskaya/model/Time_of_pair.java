@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name="time_of_pair")
-public class TimeOfPair implements Serializable {
+public class Time_of_pair implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -14,18 +14,20 @@ import java.util.List;
  */
 @Repository
 public class ScheduleDAOImpl implements ScheduleDAO {
-    private static String GET_SCHEDULE_FOR_DAY = "FROM Schedule WHERE fk_day_of_week=:fk_day_of_week AND fk_course=:fk_course AND fk_group=:fk_group";
+    private static String GET_SCHEDULE_FOR_DAY = "FROM Schedule WHERE fk_course=:fk_course";
 
     @Autowired
     private SessionFactory sessionFactory;
 
 
-    public List<Schedule> getScheduleForDay(Student student, int id_day) {
+    public List<Schedule> getScheduleForDay(Student student) {
         Query query = sessionFactory.getCurrentSession().createQuery(GET_SCHEDULE_FOR_DAY);
-        query.setParameter("fk_day_of_week", id_day);
+        //query.setParameter("fk_day_of_week", id_day);
         query.setParameter("fk_course", student.getCourse().getId_course());
-        query.setParameter("fk_group", student.getGroup().getId_group());
+        //query.setParameter("fk_group", id_day);
         List scheduleDay = query.list();
+        if(scheduleDay == null)
+            return null;
         return scheduleDay;
     }
 }

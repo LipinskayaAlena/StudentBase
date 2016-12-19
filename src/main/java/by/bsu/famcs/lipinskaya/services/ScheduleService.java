@@ -9,5 +9,5 @@ import java.util.List;
  * Created by Asus on 18.12.2016.
  */
 public interface ScheduleService {
-    List<Schedule> readForDay(Student student, int id_day);
+    List<Schedule> readForDay(Student student);
 }
