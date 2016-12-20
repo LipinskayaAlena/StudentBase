@@ -14,6 +14,21 @@
     <!-- Source our javascript file with the jQUERY code -->
     <link rel="stylesheet" href="../../resources/css/style_menu.css" />
     <link rel="stylesheet" href="../../resources/css/style_footer.css" />
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Скрыть PopUp при загрузке страницы
+            PopUpHide();
+        });
+        //Функция отображения PopUp
+        function PopUpShow(){
+            $("#popup1").show();
+        }
+        //Функция скрытия PopUp
+        function PopUpHide(){
+            $("#popup1").hide();
+        }
+    </script>
 </head>
 
 <body>
@@ -57,6 +72,9 @@
                     <td align="left">Email</td>
                     <td>${student.email}</td>
                 </tr>
+                <tr>
+                    <td><a class="button" onclick="PopUpShow();">Debts</a></td>
+                </tr>
             </table>
         </td>
     </tr>
@@ -66,6 +84,33 @@
 
 </div>
 
+<div class="b-container">
+    Debts
+</div>
+<div class="b-popup">
+    <div class="b-popup-content">
+        <c:if test="${student.debts.size() != 0}">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                </tr>
+                <c:forEach var="d" items="${student.debts}">
+                    <tr>
+                        <td>${d.description}</td>
+                        <td>${d.price}</td>
+                    </tr>
+                </c:forEach>
+
+            </table>
+        </c:if>
+        <c:if test="${student.debts.size() == 0}">
+            <div>There are not debts</div>
+        </c:if>
+        <a class="button" onclick="PopUpHide();">OK</a>
+
+    </div>
+</div>
 </body>
 <jsp:include page="include/footer.jsp" />
 </html>

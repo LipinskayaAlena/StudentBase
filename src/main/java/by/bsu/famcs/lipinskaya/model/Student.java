@@ -2,6 +2,7 @@ package by.bsu.famcs.lipinskaya.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by Asus on 12.12.2016.
@@ -13,7 +14,7 @@ public class Student implements Serializable {
 
     @Id
     @Column(name = "id_student", nullable = false)
-    private String id_student;
+    private Long id_student;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -36,13 +37,16 @@ public class Student implements Serializable {
     @JoinColumn(name = "fk_group")
     private Group fk_group;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fk_debts")
-    private Debts fk_debts;
 
-    public String getId_student() { return this.id_student; }
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name="student_debts", joinColumns = {
+            @JoinColumn(name="id_student", nullable=false)},
+            inverseJoinColumns = {@JoinColumn(name="id_debts", nullable=false)})
+    private Set<Debts> debts;
 
-    public void setId_student(String id_student) { this.id_student = id_student; }
+    public Long getId_student() { return this.id_student; }
+
+    public void setId_student(Long id_student) { this.id_student = id_student; }
 
     public String getName() { return this.name; }
 
@@ -74,11 +78,12 @@ public class Student implements Serializable {
         this.course = course;
     }
 
-    public Debts getDebts() {
-        return fk_debts;
+
+    public Set<Debts> getDebts() {
+        return debts;
     }
-    public void setDebts(Debts fk_debts) {
-        this.fk_debts = fk_debts;
+    public void setDebts(Set<Debts> debts) {
+        this.debts = debts;
     }
 
     public Group getGroup() {

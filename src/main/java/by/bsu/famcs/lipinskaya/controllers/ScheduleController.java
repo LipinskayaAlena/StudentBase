@@ -2,6 +2,7 @@ package by.bsu.famcs.lipinskaya.controllers;
 
 import by.bsu.famcs.lipinskaya.model.Schedule;
 import by.bsu.famcs.lipinskaya.model.Student;
+import by.bsu.famcs.lipinskaya.model.Teacher;
 import by.bsu.famcs.lipinskaya.services.ScheduleService;
 import by.bsu.famcs.lipinskaya.services.TeacherSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class ScheduleController {
         List<Schedule> thursday = getForDay(schedule1,new Long(4));
         List<Schedule> friday = getForDay(schedule1,new Long(5));
         List<Schedule> saturday = getForDay(schedule1,new Long(6));
-
+        List<Teacher>  teachers = teacherSubjectService.readTeachers(student.getFaculty().getId_faculty());
 
         ModelAndView modelAndView = new ModelAndView("../../WEB-INF/pages/schedule");
 
@@ -45,7 +46,7 @@ public class ScheduleController {
         modelAndView.addObject("thursday", thursday);
         modelAndView.addObject("friday", friday);
         modelAndView.addObject("saturday", saturday);
-
+        modelAndView.addObject("teachers", teachers);
 
         return modelAndView;
     }

@@ -30,12 +30,15 @@
                             </td>
                             <td>
                                     ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
+
                     </c:forEach>
                 </table>
             </c:if>
         </td>
+
         </tr>
         <tr style="font-size:20px">
         <td align="center" valign="center">Tuesday</td>
@@ -45,12 +48,14 @@
                     <c:forEach var="subject" items="${tuesday}">
                         <tr>
                             <td>
-                                ${subject.fk_time_of_pair.time}
+                                    ${subject.fk_time_of_pair.time}
                             </td>
                             <td>
-                                ${subject.fk_subject.name}
+                                    ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
+
                     </c:forEach>
 
                 </table>
@@ -69,8 +74,10 @@
                             </td>
                             <td>
                                     ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
+
                     </c:forEach>
 
                 </table>
@@ -89,6 +96,7 @@
                             </td>
                             <td>
                                     ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
                     </c:forEach>
@@ -109,6 +117,7 @@
                             </td>
                             <td>
                                     ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
                     </c:forEach>
@@ -128,6 +137,7 @@
                             </td>
                             <td>
                                     ${subject.fk_subject.name}
+                                    ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
                     </c:forEach>
