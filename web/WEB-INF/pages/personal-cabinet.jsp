@@ -12,9 +12,11 @@
 <head>
     <!-- Load jQuery from Google's CDN -->
     <!-- Source our javascript file with the jQUERY code -->
+    <title>Cabinet</title>
     <link rel="stylesheet" href="../../resources/css/style_menu.css" />
     <link rel="stylesheet" href="../../resources/css/style_footer.css" />
-    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <link rel="stylesheet" href="../../resources/css/style_popup.css" />
+    <script type="text/javascript" src="../../resources/js/jquery-3.1.1.js"></script>
     <script>
         $(document).ready(function(){
             //Скрыть PopUp при загрузке страницы
@@ -73,7 +75,7 @@
                     <td>${student.email}</td>
                 </tr>
                 <tr>
-                    <td><a class="button" onclick="PopUpShow();">Debts</a></td>
+                    <td><input type="button" value="Debts" style="font-size: 15px" onclick="PopUpShow()"/></td>
                 </tr>
             </table>
         </td>
@@ -84,16 +86,15 @@
 
 </div>
 
-<div class="b-container">
-    Debts
-</div>
-<div class="b-popup">
+
+<div class="b-popup" id="popup1">
     <div class="b-popup-content">
+        <div align="center" style="font-size: 25px">DEBTS</div>
         <c:if test="${student.debts.size() != 0}">
-            <table>
+            <table cellspacing="20">
                 <tr>
-                    <td>Name</td>
-                    <td>Price</td>
+                    <td align="center">Name</td>
+                    <td align="center">Price</td>
                 </tr>
                 <c:forEach var="d" items="${student.debts}">
                     <tr>
@@ -107,7 +108,7 @@
         <c:if test="${student.debts.size() == 0}">
             <div>There are not debts</div>
         </c:if>
-        <a class="button" onclick="PopUpHide();">OK</a>
+        <div align = "center"><input type="button" value="OK" onclick="PopUpHide()"/></div>
 
     </div>
 </div>

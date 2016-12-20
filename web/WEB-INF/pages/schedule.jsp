@@ -18,6 +18,7 @@
 <jsp:include page="include/menu.jsp" />
 
 <table width="70%" align="center" cellspacing="20" cellpadding="30" style="margin-left:250px; padding-top:50px">
+
     <tr style="font-size:20px">
         <td align="center" valign="center">Monday</td>
         <td align="left">
@@ -25,11 +26,13 @@
                 <table>
                     <c:forEach var="subject" items="${monday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
@@ -47,11 +50,13 @@
                 <table>
                     <c:forEach var="subject" items="${tuesday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
@@ -69,11 +74,13 @@
                 <table>
                     <c:forEach var="subject" items="${wednesday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
@@ -91,11 +98,13 @@
                 <table>
                     <c:forEach var="subject" items="${thursday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
@@ -112,11 +121,13 @@
                 <table>
                     <c:forEach var="subject" items="${friday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
@@ -132,11 +143,13 @@
                 <table>
                     <c:forEach var="subject" items="${saturday}">
                         <tr>
-                            <td>
+                            <td width="100px">
                                     ${subject.fk_time_of_pair.time}
                             </td>
-                            <td>
+                            <td width="150px">
                                     ${subject.fk_subject.name}
+                            </td>
+                            <td width="200px" align="left">
                                     ${teachers.get(subject.fk_subject.id_subject).name}
                             </td>
                         </tr>
