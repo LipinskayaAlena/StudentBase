@@ -14,5 +14,6 @@
         <mapping class="by.bsu.famcs.lipinskaya.model.Time_of_pair"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Schedule"/>
         <mapping class="by.bsu.famcs.lipinskaya.model.Day_of_week"/>
+        <mapping class="by.bsu.famcs.lipinskaya.model.Rating"/>
     </session-factory>
 </hibernate-configuration>

@@ -44,6 +44,12 @@ public class Student implements Serializable {
             inverseJoinColumns = {@JoinColumn(name="id_debts", nullable=false)})
     private Set<Debts> debts;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name="rating_student", joinColumns = {
+            @JoinColumn(name="id_student", nullable=false)},
+            inverseJoinColumns = {@JoinColumn(name="id_rating", nullable=false)})
+    private Set<Rating> rating;
+
     public Long getId_student() { return this.id_student; }
 
     public void setId_student(Long id_student) { this.id_student = id_student; }
@@ -78,6 +84,13 @@ public class Student implements Serializable {
         this.course = course;
     }
 
+
+    public Set<Rating> getRating() {
+        return rating;
+    }
+    public void setRaiting(Set<Rating> rating) {
+        this.rating = rating;
+    }
 
     public Set<Debts> getDebts() {
         return debts;
