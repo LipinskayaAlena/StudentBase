@@ -19,16 +19,20 @@
     <script type="text/javascript" src="../../resources/js/jquery-3.1.1.js"></script>
     <script>
         $(document).ready(function(){
-            //Скрыть PopUp при загрузке страницы
-            PopUpHide();
+            debtsHide();
+            ratingHide();
         });
-        //Функция отображения PopUp
-        function PopUpShow(){
-            $("#popup1").show();
+        function debtsShow(){
+            $("#debts_popup").show();
         }
-        //Функция скрытия PopUp
-        function PopUpHide(){
-            $("#popup1").hide();
+        function ratingShow(){
+            $("#rating_popup").show();
+        }
+        function debtsHide(){
+            $("#debts_popup").hide();
+        }
+        function ratingHide(){
+            $("#rating_popup").hide();
         }
     </script>
 </head>
@@ -75,7 +79,10 @@
                     <td>${student.email}</td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="Debts" style="font-size: 15px" onclick="PopUpShow()"/></td>
+                    <td><input type="button" value="Debts" style="font-size: 15px" onclick="debtsShow()"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Raiting" style="font-size: 15px" onclick="ratingShow()"/></td>
                 </tr>
             </table>
         </td>
@@ -87,7 +94,7 @@
 </div>
 
 
-<div class="b-popup" id="popup1">
+<div class="b-popup" id="debts_popup">
     <div class="b-popup-content">
         <div align="center" style="font-size: 25px">DEBTS</div>
         <c:if test="${student.debts.size() != 0}">
@@ -108,10 +115,37 @@
         <c:if test="${student.debts.size() == 0}">
             <div>There are not debts</div>
         </c:if>
-        <div align = "center"><input type="button" value="OK" onclick="PopUpHide()"/></div>
+        <div align = "center"><input type="button" value="OK" onclick="debtsHide()"/></div>
 
     </div>
 </div>
+
+<div class="b-popup" id="rating_popup">
+    <div class="b-popup-content" style="width: 200px; height: 300px">
+        <div align="center" style="font-size: 25px">RATING</div>
+        <c:if test="${student.rating.size() != 0}">
+            <table cellspacing="20">
+                <tr>
+                    <td align="center">Semester</td>
+                    <td align="center">Average mark</td>
+                </tr>
+                <c:forEach var="r" items="${student.rating}">
+                    <tr>
+                        <td align="center">${r.semester}</td>
+                        <td align="center">${r.average_mark}</td>
+                    </tr>
+                </c:forEach>
+
+            </table>
+        </c:if>
+        <c:if test="${student.rating.size() == 0}">
+            <div>There are not rating</div>
+        </c:if>
+        <div align = "center"><input type="button" value="OK" onclick="ratingHide()"/></div>
+
+    </div>
+</div>
+
 </body>
 <jsp:include page="include/footer.jsp" />
 </html>

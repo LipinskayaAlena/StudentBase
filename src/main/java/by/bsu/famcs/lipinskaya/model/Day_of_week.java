@@ -24,10 +24,6 @@ public class Day_of_week implements Serializable {
     public Long getId_day_of_week() { return this.id_day_of_week; }
     public void setId_day_of_week(Long id_day_of_week) { this.id_day_of_week = id_day_of_week; }
 
-
-    //public Long getId_day_of_week() { return this.id_day_of_week; }
-    //public void setId_day_of_week(Long id_day_of_week) { this.id_day_of_week = id_day_of_week; }
-
     public String getName() { return this.name; }
     public void setName(String name) { this.name = name; }
 }

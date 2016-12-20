@@ -18,7 +18,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Autowired
     ScheduleDAO scheduleDAO;
 
-    public List<Schedule> readForDay(Student student) {
-        return scheduleDAO.getScheduleForDay(student);
+    public List<Schedule> readSchedule(Student student) {
+        return scheduleDAO.getSchedule(student);
     }
 }

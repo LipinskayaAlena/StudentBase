@@ -9,6 +9,6 @@ import java.util.List;
  * Created by Asus on 18.12.2016.
  */
 public interface ScheduleDAO {
-    List<Schedule> getScheduleForDay(Student student);
+    List<Schedule> getSchedule(Student student);
 
 }

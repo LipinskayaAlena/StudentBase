@@ -27,9 +27,9 @@ public class ScheduleController {
     TeacherSubjectService teacherSubjectService;
 
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
-    public ModelAndView getMonth(HttpServletRequest request) {
+    public ModelAndView getSchedule(HttpServletRequest request) {
         Student student = (Student)request.getSession().getAttribute("student");
-        List<Schedule> schedule1 = scheduleService.readForDay(student);
+        List<Schedule> schedule1 = scheduleService.readSchedule(student);
         List<Schedule> monday = getForDay(schedule1,new Long(1));
         List<Schedule> tuesday = getForDay(schedule1,new Long(2));
         List<Schedule> wednesday = getForDay(schedule1,new Long(3));

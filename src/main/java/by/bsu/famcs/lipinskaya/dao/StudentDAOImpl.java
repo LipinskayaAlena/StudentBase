@@ -15,14 +15,9 @@ import java.util.List;
 @Repository
 public class StudentDAOImpl implements StudentDAO {
     private static String GET_STUDENT_BY_EMAIL = "FROM Student WHERE email=:email";
-    private static String FIND_STUDENT_BY_EMAIL_PASSWORD = "from Student where email=:email AND password = :password";
 
     @Autowired
     private SessionFactory sessionFactory;
-
-    public Student getStudentByName(String name) {
-        return (Student) getCurrentSession().get(Student.class, name);
-    }
 
     public Student getStudentByEmail(String email) {
         Query query = sessionFactory.getCurrentSession().createQuery(GET_STUDENT_BY_EMAIL);
@@ -32,18 +27,6 @@ public class StudentDAOImpl implements StudentDAO {
 
     }
 
-    public Student getStudentById(String id) {
-        return (Student) getCurrentSession().get(Student.class, id);
-    }
-
-    public Student find(String email, String password) {
-        Query query = sessionFactory.getCurrentSession().createQuery(FIND_STUDENT_BY_EMAIL_PASSWORD)
-                .setParameter("email", email)
-                .setParameter("password", password);
-        List<Student> users = query.list();
-
-        return (Student) users.get(0);
-    }
 
 
     private Session getCurrentSession() {

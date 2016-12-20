@@ -20,11 +20,9 @@ public class ScheduleDAOImpl implements ScheduleDAO {
     private SessionFactory sessionFactory;
 
 
-    public List<Schedule> getScheduleForDay(Student student) {
+    public List<Schedule> getSchedule(Student student) {
         Query query = sessionFactory.getCurrentSession().createQuery(GET_SCHEDULE_FOR_DAY);
-        //query.setParameter("fk_day_of_week", id_day);
         query.setParameter("fk_course", student.getCourse().getId_course());
-        //query.setParameter("fk_group", id_day);
         List scheduleDay = query.list();
         if(scheduleDay == null)
             return null;

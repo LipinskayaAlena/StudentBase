@@ -20,13 +20,5 @@ public class StudentServiceImpl implements StudentService {
         return studentDAO.getStudentByEmail(email);
     }
 
-    public Student readById(String id) {
-        return studentDAO.getStudentById(id);
-    }
-
-    public Student find(String email, String password) {
-        return studentDAO.find(email, password);
-    }
-
 
 }
